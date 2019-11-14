@@ -35,7 +35,11 @@ Function GetWindowData($processName)
   $global:config.Add($json)
 }
 
-#Rectangle object definition to interact with the Windows API
+# =======
+#  MAIN
+# =======
+
+#Window object type definition to interact with the Windows API
 Add-Type @"
   using System;
   using System.Runtime.InteropServices;
@@ -56,9 +60,6 @@ Add-Type @"
   }
 "@
 
-# =======
-#  MAIN
-# =======
 $global:config = New-Object System.Collections.ArrayList
 $configpath = $env:USERPROFILE + "\windowlayout.config"
 
